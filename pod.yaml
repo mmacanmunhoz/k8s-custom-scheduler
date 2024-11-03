@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: custom-scheduler-pod-2
+spec:
+  schedulerName: custom-scheduler
+  containers:
+    - name: test-container
+      image: busybox
+      command: ["sleep", "3600"]
+      resources:
+        requests:
+          memory: "32Mi"
+          cpu: "50m"
+        limits:
+          memory: "64Mi"
+          cpu: "100m"
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: custom-scheduler-pod-3
+spec:
+  schedulerName: custom-scheduler
+  containers:
+    - name: test-container
+      image: busybox
+      command: ["sleep", "3600"]
+      resources:
+        requests:
+          memory: "32Mi"
+          cpu: "50m"
+        limits:
+          memory: "64Mi"
+          cpu: "100m"
