@@ -27,7 +27,7 @@ profiles:
           - name: "ImageLocality" 
             weight: 1      # Prioriza nós que já possuem a imagem do pod
         disabled:
-          - name: "ServiceAffinity"     # Desabilita afinidade com serviços
+          - name: "ServiceAffinity"     #  Garantir que todos os pods de um serviço específico sejam escalonados em nós que atendam aos requisitos de afinidade
       filter:
         enabled:
           - name: "NodeUnschedulable"   # Filtra nós que estão marcados como indisponíveis
@@ -36,3 +36,7 @@ profiles:
         enabled:
           - name: "DefaultBinder"       # Usa o vinculador padrão para associar o pod ao nó
 ```
+
+## Pendencias
+
+- Executando o scheduler, notei que ao trabalhar em conjunto com o default ele apresentou erro, entrou em conflito .. preciso investigar o motivo
