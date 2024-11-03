@@ -22,8 +22,10 @@ profiles:
       # Plugins de Pontuação (Score Plugins)
       score:
         enabled:
-          - name: "NodeResourcesFit"    # Pontua nós com base nos recursos solicitados
-          - name: "ImageLocality"       # Prioriza nós que já possuem a imagem do pod
+          - name: "NodeResourcesFit" 
+             weight: 2    # Pontua nós com base nos recursos solicitados
+          - name: "ImageLocality" 
+            weight: 1      # Prioriza nós que já possuem a imagem do pod
         disabled:
           - name: "ServiceAffinity"     # Desabilita afinidade com serviços
       filter:
